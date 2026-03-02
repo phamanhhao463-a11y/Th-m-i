@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thiệp mời chụp kỷ yếu</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Quicksand',sans-serif;
+    background-image:url("bg.jpeg");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+}
+
+.card{
+    width:350px;
+    padding:30px;
+    background:rgba(255,255,255,0.92);
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(255,105,180,0.4);
+    backdrop-filter:blur(5px);
+}
+
+h1{
+    font-family:'Pacifico',cursive;
+    color:#ff4da6;
+    margin-bottom:15px;
+}
+
+.info{
+    margin-top:15px;
+    padding:12px;
+    background:#ffe6f2;
+    border-radius:15px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:15px;
+    border-radius:15px;
+    border:1px solid #ddd;
+    outline:none;
+}
+
+button{
+    margin-top:15px;
+    padding:10px;
+    border:none;
+    border-radius:20px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    width:100%;
+}
+
+.accept{
+    background:#ff66b2;
+    color:#fff;
+}
+
+.accept:hover{
+    background:#ff3385;
+}
+
+.decline{
+    background:#ddd;
+}
+
+.decline:hover{
+    background:#bbb;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>Thư mời</h1>
+
+    <div class="info">
+        <p><b>🕘 Thời gian:</b> 9h - 11h</p>
+        <p><b>📅 Ngày:</b> 29/03/2026</p>
+        <p><b>📍 Địa điểm:</b> Trường THPT Lê Hồng Phong</p>
+    </div>
+
+    <form id="myForm"
+          action="https://formsubmit.co/phamanhhao463@gmail.com"
+          method="POST"
+          onsubmit="return validateForm()">
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Phản hồi thiệp kỷ yếu">
+
+        <input type="text" id="nameInput" name="Tên" placeholder="Nhập tên của bạn...">
+
+        <button type="submit" name="Phản hồi" value="Xác nhận tham gia 💖" class="accept">
+            💖 Xác nhận tham gia
+        </button>
+
+        <button type="submit" name="Phản hồi" value="Từ chối 😢" class="decline">
+            😢 Từ chối
+        </button>
+
+    </form>
+
+</div>
+
+<script>
+function validateForm() {
+    var name = document.getElementById("nameInput").value.trim();
+
+    if (name === "") {
+        alert("Vui lòng nhập tên của bạn!!!");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</body>
+</html>
